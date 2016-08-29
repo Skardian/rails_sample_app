@@ -35,4 +35,7 @@ class User < ApplicationRecord
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+  # will_paginate
+  self.per_page = 10
 end
